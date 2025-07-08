@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>carta del destino</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes rotateZ360 {
+      0% {
+        transform: rotateZ(0deg);
+      }
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+
+    .rotate-card {
+      animation: rotateZ360 0.08s linear infinite;
+    }
+
+    body {
+      cursor: pointer; /* 클릭 가능하다는 표시 */
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#9EB177] flex flex-col items-center justify-center text-center relative"
+      onclick="location.href='/home/home.html'">
+  
+  <!-- 장식 요소 -->
+  <div class="absolute top-0 left-0">
+    <!-- 여기에 왼쪽 위 장식 SVG -->
+  </div>
+  <div class="absolute bottom-0 right-0">
+    <!-- 여기에 오른쪽 아래 장식 SVG -->
+  </div>
+
+  <!-- 텍스트 콘텐츠 -->
+  <div class="mb-10">
+    <h1 class="text-3xl font-semibold">carta del destino</h1>
+    <p class="text-lg mt-2">나에게 다가가는 시간</p>
+  </div>
+
+  <!-- 카드 이미지 -->
+  <div class="bg-transparent"> 
+    <img src="회전회오리.jpg" alt="회전회오리" class="w-40 h-auto rotate-card" />
+  </div>
+
+  <!-- 하단 텍스트 -->
+  <p class="absolute bottom-6 text-gray-100 text-sm">화면을 클릭하세요.</p>
+</body>
+</html>
