@@ -20,7 +20,7 @@
 
     <!-- 로그인/회원가입 세로 스택 -->
     <div class="flex flex-col space-y-2 text-lg font-['Inter'] text-black">
-      <button>로그인</button>
+      <button id="go-login">로그인</button>
     </div>
 
     <!-- 햄버거 버튼 -->
@@ -77,5 +77,10 @@
 
 <!-- hamburger.js 연결 -->
 <script src="hamburger.js"></script>
+<script>
+  document.getElementById('go-login').addEventListener('click', function() {
+    window.location.href = '/Login/Login.html';
+  });
+</script>
 </body>
 </html>
