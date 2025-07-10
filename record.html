@@ -2,18 +2,39 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>기록장</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white min-h-screen flex flex-col items-center justify-start py-12 font-[Inter] text-black">
+<body class="bg-white min-h-screen font-[Inter] text-black">
 
-  <h1 class="text-3xl font-semibold mb-8 text-center">기 록 장</h1>
+  <!-- ✅ 상단 네비게이션 바 -->
+  <nav class="w-full py-6 relative flex items-center px-8" style="background-color: #9EB177;">
+    <div class="flex-1"></div>
+    <div class="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold tracking-widest">
+      로고
+    </div>
+    <div class="flex-1 flex items-center justify-end space-x-4">
+      <button class="text-base font-medium">Login</button>
+      <button class="ml-2">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
 
-  <div id="cardGrid" class="grid grid-cols-5 gap-6">
-    <!-- 카드들은 JS로 생성됨 -->
-  </div>
+  <!-- ✅ 기록장 제목 -->
+  <main class="flex flex-col items-center justify-start py-12 px-4">
+    <h1 class="text-3xl font-semibold mb-8">기 록 장</h1>
 
+    <!-- ✅ 카드 그리드 -->
+    <div id="cardGrid" class="grid grid-cols-5 gap-6">
+      <!-- 카드들은 JS로 생성됨 -->
+    </div>
+  </main>
+
+  <!-- ✅ 카드 렌더링 스크립트 -->
   <script>
     const MAX_CARDS = 15;
     const cardGrid = document.getElementById('cardGrid');
