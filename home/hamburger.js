@@ -5,30 +5,35 @@ const closeBtn = document.getElementById('close-btn');
 
 // 메뉴 열기 함수
 function openMenu() {
-  slideMenu.classList.remove('translate-x-full'); // 슬라이드 메뉴를 화면에 보이도록
-  slideMenu.classList.add('translate-x-0'); // 슬라이드 메뉴의 위치를 변경
-  document.body.style.overflow = 'hidden'; // 스크롤 방지
+  slideMenu.classList.remove('translate-x-full');
+  slideMenu.classList.add('translate-x-0');
+  slideMenu.style.display = 'flex'; // 메뉴를 flex로 표시
+  document.body.style.overflow = 'hidden';
 }
 
 // 메뉴 닫기 함수
 function closeMenu() {
   slideMenu.classList.remove('translate-x-0');
   slideMenu.classList.add('translate-x-full');
-  document.body.style.overflow = ''; // 스크롤 복원
+  setTimeout(() => {
+    slideMenu.style.display = 'none'; // 애니메이션 후 완전히 숨김
+  }, 300); // transition-duration과 맞춤
+  document.body.style.overflow = '';
 }
+
+// 초기 상태에서 메뉴 완전히 숨김
+slideMenu.style.display = 'none';
 
 // 이벤트 리스너
 hamburgerBtn.addEventListener('click', openMenu);
 closeBtn.addEventListener('click', closeMenu);
 
-// ESC 키로 메뉴 닫기
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && slideMenu.classList.contains('translate-x-0')) {
     closeMenu();
   }
 });
 
-// 메뉴 링크 클릭 시 메뉴 닫기 (선택사항)
 const menuLinks = document.querySelectorAll('#slide-menu a');
 menuLinks.forEach(link => {
   link.addEventListener('click', closeMenu);
