@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기록장</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white min-h-screen flex flex-col items-center justify-start py-12 font-[Inter] text-black">
+
+  <h1 class="text-3xl font-semibold mb-8 text-center">기 록 장</h1>
+
+  <div id="cardGrid" class="grid grid-cols-5 gap-6">
+    <!-- 카드들은 JS로 생성됨 -->
+  </div>
+
+  <script>
+    const MAX_CARDS = 15;
+    const cardGrid = document.getElementById('cardGrid');
+    const records = JSON.parse(localStorage.getItem('tarot_dates') || '[]');
+
+    function renderCards() {
+      cardGrid.innerHTML = '';
+      for (let i = 0; i < MAX_CARDS; i++) {
+        const card = document.createElement('div');
+        card.className = "relative w-[80px] h-[110px] bg-gray-300 rounded-lg flex items-center justify-center font-semibold cursor-pointer hover:bg-gray-400";
+
+        if (records[i]) {
+          const dateTag = document.createElement('div');
+          dateTag.className = "absolute top-1 left-1 text-xs font-semibold bg-white/70 px-2 py-0.5 rounded";
+          dateTag.textContent = records[i];
+          card.appendChild(dateTag);
+        }
+
+        card.addEventListener('click', () => {
+          window.location.href = `card.html?cardId=${i}`;
+        });
+
+        cardGrid.appendChild(card);
+      }
+    }
+
+    renderCards();
+  </script>
+</body>
+</html>
