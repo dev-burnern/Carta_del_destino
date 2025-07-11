@@ -120,3 +120,57 @@ statusFilter.onchange = renderInquiries;
 
 // 문의내역 탭 진입 시 필터 적용
 renderInquiries();
+
+// 햄버거 메뉴 슬라이드 관련
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const slideMenu = document.getElementById('slide-menu');
+const closeBtn = document.getElementById('close-btn');
+const SLIDE_DURATION = 300;
+let isMenuOpen = false;
+
+function openMenu() {
+  slideMenu.style.display = 'flex';
+  void slideMenu.offsetWidth;
+  slideMenu.classList.remove('translate-x-full');
+  slideMenu.classList.add('translate-x-0');
+  document.body.style.overflow = 'hidden';
+  isMenuOpen = true;
+}
+
+function closeMenu() {
+  slideMenu.classList.remove('translate-x-0');
+  slideMenu.classList.add('translate-x-full');
+  setTimeout(() => {
+    slideMenu.style.display = 'none';
+  }, SLIDE_DURATION);
+  document.body.style.overflow = '';
+  isMenuOpen = false;
+}
+
+function toggleMenu() {
+  if (isMenuOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
+
+// 초기 상태에서 메뉴 숨김
+slideMenu.style.display = 'none';
+
+// 이벤트 리스너
+hamburgerBtn.addEventListener('click', toggleMenu);
+closeBtn.addEventListener('click', closeMenu);
+
+// ESC 키로 닫기
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && isMenuOpen) {
+    closeMenu();
+  }
+});
+
+// 메뉴 내 링크 클릭 시 닫기
+const menuLinks = document.querySelectorAll('#slide-menu a');
+menuLinks.forEach(link => {
+  link.addEventListener('click', closeMenu);
+});

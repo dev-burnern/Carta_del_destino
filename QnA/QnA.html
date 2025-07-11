@@ -9,20 +9,21 @@
 <body class="bg-gray-100 min-h-screen w-full">
   <!-- 상단 네비게이션 (로고 중앙) -->
   <nav class="w-full py-6 relative flex items-center px-8" style="background-color: #9EB177;">
-    <div class="flex-1"></div>
-    <div class="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold tracking-widest">
-      로고
-    </div>
-    <div class="flex-1 flex items-center justify-end space-x-4">
-      <button class="text-base font-medium">로그인</button>
-      <button class="text-base font-medium">회원가입</button>
-      <button class="ml-2">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-  </nav>
+  <div class="flex-1"></div>
+  <div class="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold tracking-widest">
+    로고
+  </div>
+  <div class="flex-1 flex items-center justify-end space-x-4">
+    <button class="text-base font-medium">Login</button>
+    <!-- 햄버거 버튼에 id 추가 -->
+    <button id="hamburger-btn" class="ml-2 cursor-pointer flex flex-col justify-between w-8 h-6 focus:outline-none transition-transform duration-150 hover:scale-110 active:scale-95" aria-label="메뉴 열기">
+      <span class="block h-1 w-full bg-black rounded"></span>
+      <span class="block h-1 w-full bg-black rounded"></span>
+      <span class="block h-1 w-full bg-black rounded"></span>
+    </button>
+  </div>
+</nav>
+
 
   <!-- Q&A 게시판 전체화면 -->
   <main class="w-full min-h-[calc(100vh-80px)] flex flex-col items-center justify-start px-2 py-8">
@@ -90,11 +91,12 @@
   <!-- 글쓰기 버튼 (고정) -->
   <button
     id="write-btn"
-    class="fixed bottom-8 right-8 bg-black text-white px-8 py-4 rounded-full shadow-lg hover:bg-gray-800 transition text-lg"
-    style="z-index: 10;"
+    class="fixed bottom-8 right-8 text-black px-4 py-2 rounded-full shadow-lg hover:bg-gray-200 transition text-base"
+    style="z-index: 10; background-color: #FFFFF0;"
   >
     글쓰기
   </button>
+
 
   <!-- 글쓰기 모달 -->
   <div id="modal-bg" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
@@ -132,6 +134,17 @@
       </form>
     </div>
   </div>
+
+  <!-- 슬라이드 메뉴 -->
+<!-- 슬라이드 메뉴 -->
+<div id="slide-menu"
+  class="fixed top-24 right-6 w-72 bg-white shadow-lg rounded-xl p-6 flex flex-col space-y-6 z-50 transform translate-x-full transition-transform duration-300"
+  style="height: 320px; display: none;">
+  <button id="close-btn" class="self-end text-2xl font-bold mb-4 focus:outline-none" aria-label="메뉴 닫기">&times;</button>
+  <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100 transition">설정</a>
+  <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100 transition">내 정보</a>
+  <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100 transition">로그아웃</a>
+</div>
 
   <!-- JS는 아래에 별도 분리 -->
   <script src="QnA.JS"></script>
