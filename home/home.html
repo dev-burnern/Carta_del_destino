@@ -1,81 +1,78 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>home</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
-<body>
-<div class="w-full bg-[#9eb177] h-[200px] flex items-center justify-center relative px-10">
+<body class="bg-gray-100 min-h-screen w-full">
 
-  <!-- 로고 타원 (완전 중앙, rotate 제거) -->
-  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[535px] h-[78px] bg-gray-300 rounded-full flex items-center justify-center">
-    <span class="text-3xl font-bold">로고</span>
+  <!-- 상단 네비게이션 -->
+<nav class="w-full py-6 relative flex items-center px-8" style="background-color: #9EB177;">
+  <div class="flex-1"></div>
+  <div class="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold tracking-widest">
+    로고
   </div>
-
-  <!-- 오른쪽 로그인/회원가입 + 햄버거 버튼 그룹 -->
-  <div class="flex items-center space-x-4 absolute right-10 top-1/2 -translate-y-1/2">
-
-    <!-- 로그인/회원가입 세로 스택 -->
-    <div class="flex flex-col space-y-2 text-lg font-['Inter'] text-black">
-      <button id="go-login">로그인</button>
-    </div>
-
-    <!-- 햄버거 버튼 -->  
-    <button id="hamburger-btn" aria-label="메뉴 열기"
-      class="cursor-pointer flex flex-col justify-between w-10 h-8 focus:outline-none transition-transform duration-150 hover:scale-110 active:scale-95">
-      <span class="block h-1.5 w-full bg-black rounded"></span>
-      <span class="block h-1.5 w-full bg-black rounded"></span>
-      <span class="block h-1.5 w-full bg-black rounded"></span>
+  <div class="flex-1 flex items-center justify-end space-x-4">
+    <!-- ✅ QnA 버튼 추가 -->
+    <a href="../QnA/QnA.html" class="text-base font-medium hover:underline">QnA</a>
+    <button id="go-login" class="text-base font-medium">로그인</button>
+    <button class="ml-2" id="hamburger-btn" aria-label="메뉴 열기">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
     </button>
   </div>
-</div>
+</nav>
 
-<!-- 슬라이드 메뉴 -->
-<div id="slide-menu"
-  class="fixed top-[200px] right-10 w-64 bg-white shadow-lg rounded-lg p-6 flex flex-col space-y-4 z-50 transform translate-x-full transition-transform duration-300"
-  style="height: calc(100vh - 200px - 120px);">
-  <button id="close-btn" class="self-end text-2xl font-bold mb-2 focus:outline-none">&times;</button>
-  <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100 transition hover:scale-105">설정</a>
-  <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100 transition hover:scale-105">내 정보</a>
-  <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100 transition hover:scale-105">로그아웃</a>
-</div>
-
-  <!-- 카드 영역: 배너와의 간격을 늘리기 위해 mt-16 추가 -->
-  <div class="bg-gray-300 w-[359px] h-[484px] mx-auto relative mt-16">
-    <div class="absolute top-[200px] left-1/2 -translate-x-1/2 font-medium text-xl">카드</div>
+  <!-- ✅ 햄버거 슬라이드 메뉴 -->
+  <div id="slide-menu"
+    class="fixed top-[96px] right-10 w-64 bg-white shadow-lg rounded-lg p-6 flex flex-col space-y-4 z-50 transform translate-x-full transition-transform duration-300"
+    style="height: calc(100vh - 96px - 120px);">
+    <button id="close-btn" class="self-end text-2xl font-bold mb-2 focus:outline-none">&times;</button>
+    <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100 transition hover:scale-105">설정</a>
+    <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100 transition hover:scale-105">내 정보</a>
+    <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100 transition hover:scale-105">로그아웃</a>
   </div>
 
-  <!-- 고민 입력창 -->
-  <div class="bg-gray-300 w-[653px] h-[155px] mx-auto mt-10 relative">
-    <div class="absolute top-4 left-1/2 -translate-x-1/2 font-medium text-lg">자신의 고민적기</div>
-  </div>
+  <!-- ✅ 메인 콘텐츠 -->
+  <main class="w-full flex flex-col items-center justify-start px-4 py-10">
 
-  <!-- 카드 룰렛 버튼 -->
-  <div class="w-[187px] h-[61px] bg-gray-300 mx-auto mt-12 text-center">
-    <div class="text-2xl font-medium pt-3">카드 룰렛</div>
-  </div>
+    <!-- 카드 영역 -->
+    <div class="bg-gray-300 w-[359px] h-[484px] relative mb-10 rounded">
+      <div class="absolute top-[200px] left-1/2 -translate-x-1/2 font-medium text-xl">카드</div>
+    </div>
 
-  <!-- 구분선 -->
-  <hr class="w-[90%] border-t-2 border-gray-400 mx-auto my-10" />
+    <!-- 고민 입력창 -->
+    <div class="bg-gray-300 w-[653px] h-[155px] relative mb-10 rounded">
+      <div class="absolute top-4 left-1/2 -translate-x-1/2 font-medium text-lg">자신의 고민적기</div>
+    </div>
 
-  <!-- 설명 문구 -->
-  <div class="text-center text-[#9eb177] text-lg font-['Inter'] px-4 mb-20">
-    <p class="mb-2">당신의 이야기를 듣고 싶어요. 카드를 펼치는 건 단순한 점이 아니라, 삶에 귀 기울이는 작은 용기입니다.</p>
-    <p>운명이란, 당신이 만들어가는 이야기예요.</p>
-  </div>
+    <!-- 카드 룰렛 버튼 -->
+    <div class="w-[187px] h-[61px] bg-gray-300 text-center rounded mb-12">
+      <div class="text-2xl font-medium pt-3">카드 룰렛</div>
+    </div>
 
-  <!-- 챗봇 이미지 -->
-  <div class="flex justify-end pr-10 pb-20">
-  <button aria-label="챗봇 열기" class="focus:outline-none">
-    <img src="챗봇.png" alt="챗봇" class="w-[137px] h-[115px] rounded-full object-cover" />
-  </button>
-</div>
+    <!-- 구분선 -->
+    <hr class="w-[90%] border-t-2 border-gray-400 mx-auto mb-10" />
 
+    <!-- 설명 문구 -->
+    <div class="text-center text-[#9eb177] text-lg font-['Inter'] px-4 mb-20">
+      <p class="mb-2">당신의 이야기를 듣고 싶어요. 카드를 펼치는 건 단순한 점이 아니라, 삶에 귀 기울이는 작은 용기입니다.</p>
+      <p>운명이란, 당신이 만들어가는 이야기예요.</p>
+    </div>
 
-<!-- hamburger.js 연결 -->
-<script src="hamburger.js"></script>
+    <!-- 챗봇 이미지 -->
+    <div class="flex justify-end pr-10 pb-20 w-full">
+      <button aria-label="챗봇 열기" class="focus:outline-none">
+        <img src="" alt="chat bot" class="w-[137px] h-[115px] rounded-full object-cover"/>
+      </button>
+    </div>
+
+  </main>
+
+  <script src="hamburger.js"></script>
 </body>
 </html>
