@@ -17,5 +17,16 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false
+  },
+  "include": [
+    "src",
+    "server",       // server 폴더가 루트에 있다면 추가
+    "index.js"      // 혹은 존재하는 JS 파일이 있다면 적절히 포함
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
   }
 }
