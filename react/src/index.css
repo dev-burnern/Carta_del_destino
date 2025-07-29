@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/preflight";  /* base 대신 */
+@import "tailwindcss/utilities";  /* utilities */
+/* components는 선택사항 */
 
 a {
   font-weight: 500;
