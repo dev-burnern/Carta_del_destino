@@ -13,6 +13,9 @@ import MainLayout from './components/layout/MainLayout.tsx';
 function App() {
   return (
     <MainLayout>
+
+function App() {
+  return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
       <Route path="/login" element={<LoginPage />} />

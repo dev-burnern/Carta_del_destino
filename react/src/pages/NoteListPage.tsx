@@ -1,0 +1,5 @@
+function NoteListPage() {
+  return <h1>NoteList Page</h1>;
+}
+
+export default NoteListPage;
