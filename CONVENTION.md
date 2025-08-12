@@ -23,40 +23,28 @@
 
 ## Structure
 ```
-frontend/
-├── public/
-├── src/
-│   ├── apis/
-│   ├── components/
-│   ├── hooks/
-│   ├── pages/
-│   ├── styles/
-│   └── index.tsx
-├── tests/
-├── node_modules/  (module)
-└── package.json
+project/
+├── public/                  # 정적 파일 및 이미지(브라우저에서 직접 접근 가능)
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── src/                     # 소스 코드 루트
+│   └── app/                 # Next.js app 디렉토리(라우팅, 레이아웃, 글로벌 스타일 등)
+│       ├── favicon.ico      # 파비콘
+│       ├── globals.css      # 전체 스타일(글로벌 CSS, TailwindCSS import)
+│       ├── layout.tsx       # 전체 레이아웃 컴포넌트
+│       └── page.tsx         # 메인 페이지 컴포넌트
+├── .gitignore               # Git에 포함하지 않을 파일/폴더 목록
+├── eslint.config.mjs        # ESLint 설정 파일
+├── next-env.d.ts            # Next.js 타입 지원 파일(자동 생성)
+├── next.config.ts           # Next.js 설정 파일
+├── package.json             # 프로젝트 메타정보 및 의존성 관리
+├── postcss.config.mjs       # PostCSS 설정 파일(TailwindCSS 등)
+├── README.md                # 프로젝트 설명 문서
+└── tsconfig.json            # TypeScript 설정 파일
 ```
-
-```
-backend/
-├── public/
-├── src/
-│   ├── controllers/      # 비즈니스 로직 처리
-│   ├── routes/           # 라우팅 정의
-│   ├── services/         # 서비스 계층
-│   ├── modules/          # 데이터 모델(Mongoose, Sequelize 등)
-│   ├── config/           # 환경/설정 파일
-│   ├── utils/            # 유틸리티/헬퍼 함수
-│   ├── repositories/     # 데이터베이스 액세스 레이어
-│   ├── middlewares/      # 미들웨어
-│   └── index.ts
-├── app.js
-├── server.js
-├── tests/
-├── node_modules/         # 모듈
-└── package.json
-```
-
 
 ## Programming
 - 반복되는 코드는 작성하지 않는다.
