@@ -8,15 +8,18 @@ import './App.css';
 import LoginPage from './pages/LoginPage.tsx';
 import RegisterPage from './pages/RegisterPage.tsx';
 import QnAPage from './pages/QnAPage.tsx';
+import MainLayout from './components/layout/MainLayout.tsx';
 
 function App() {
   return (
+    <MainLayout>
     <Routes>
       <Route path="/" element={<LoginPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/qna" element={<QnAPage />} />
     </Routes>
+    </MainLayout>
   );
 }
 
