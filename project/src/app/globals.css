@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body { height: 100%; }
+  body {
+    background-color: #f9fafb; /* Tailwind bg-gray-50 */
+    color: #111827;            /* Tailwind text-gray-900 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } /* 에디터 경고면 무시해도 OK */
+}

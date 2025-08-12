@@ -1,0 +1,114 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+/src/generated/prisma
+
+# node_modules 및 패키지 매니저 로그
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js 빌드 산출물
+.next/
+app-build-manifest.json
+build-manifest.json
+fallback-build-manifest.json
+prerender-manifest.json
+routes-manifest.json
+package.json # .next 내부의 package.json만 무시됨
+postcss.js
+postcss.js.map
+
+# Next.js 서버 빌드 산출물
+.next/server/
+.next/server/app/
+.next/server/chunks/
+.next/server/static/
+.next/server/cache/
+.next/server/ssr/
+.next/server/fallback-build-manifest.json
+
+# Next.js static 파일
+.next/static/
+.next/static/chunks/
+.next/static/development/
+.next/static/media/
+
+# Prisma
+prisma/.env
+prisma/dev.db
+prisma/dev.db-journal
+
+# 환경 변수 파일
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 로그 및 임시 파일
+logs
+*.log
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
+
+# 테스트 및 커버리지
+coverage/
+.nyc_output
+
+# IDE 및 에디터 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS별 파일
+.DS_Store
+Thumbs.db
+
+# 기타
+public/*.tmp
+public/*.temp
